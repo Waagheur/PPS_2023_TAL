@@ -1,0 +1,5 @@
+Determinant-Adjectif-Nom:Determinant-Adjectif-Nom: {<DT>?<JJ>*<NN>}
+Adjectif-Nom:Adjectif-Nom: {<JJ><NN>}
+Nom-Nom:Nom-Nom: {<NN><NN>}
+Adjectif-Nom-Nom:Adjectif-Nom-Nom: {<JJ><NN><NN>}
+Adjectif-Adjectif-Nom:Adjectif-Adjectif-Nom: {<JJ><JJ><NN>}
