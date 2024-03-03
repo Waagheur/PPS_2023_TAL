@@ -12,7 +12,7 @@ commande :
 	python conll2pos.py source output
 source : le chemin vers le fichier colonne à découper
 output : le chemin du fichier dans lequel sera écrit le texte à annoter
-ex : python conll2pos.py ../data/wsj_0010_sample.txt.conll ./wsj_0010_sample.txt.pos
+ex : python conll2pos.py ../data/wsj_0010_sample.txt.conll ../data/wsj_0010_sample.txt.pos
 
 ----- conll2txt.py -----
 
@@ -27,7 +27,7 @@ commande :
 	python conll2txt.py source output
 source : le chemin vers le fichier colonne à découper
 output : le chemin du fichier dans lequel sera écrit le texte à annoter
-ex : python conll2txt.py ../data/wsj_0010_sample.txt.conll ./wsj_0010_sample.txt
+ex : python conll2txt.py ../data/wsj_0010_sample.txt.conll ../data/wsj_0010_sample.txt
 
 ----- nltk2univ.py -----
 
@@ -47,7 +47,7 @@ commande :
 source : le chemin vers le fichier POS tags nltk
 dict : le chemin vers un fichier de dictionnaire de POS tags de nltk à univ
 output : le chemin du fichier dans lequel sera écrit le fichier POS tags universel
-ex : python nltk2univ.py ../data/wsj_0010_sample.txt.pos.nltk ../data/POSTags_PTB_Universal_Linux.txt ./wsj_0010_sample.txt.pos.univ
+ex : python nltk2univ.py ../data/wsj_0010_sample.txt.pos.nltk ../data/POSTags_PTB_Universal_Linux.txt ../data/wsj_0010_sample.txt.pos.univ
 
 ----- nltkChunks.py -----
 
@@ -60,7 +60,7 @@ commande :
 source : le chemin vers le fichier texte où extraire les mots composés
 grammar : le chemin vers un fichier de règles de grammaire
 output : le chemin du fichier dans lequel sera écrit le fichier de mots composés
-ex : python nltkChunks.py ../data/wsj_0010_sample.txt ../data/grammar ./wsj_0010_sample.txt.chk.nltk
+ex : python nltkChunks.py ../data/wsj_0010_sample.txt ../data/grammar ../data/wsj_0010_sample.txt.chk.nltk
 
 ----- nltkNE.py -----
 
@@ -70,7 +70,7 @@ commande :
 	python nltkNE.py source output
 source : le chemin vers le fichier texte où extraire les entitées nommées
 output : le chemin du fichier dans lequel sera écrit les entités nommées trouvées
-ex : python nltkNE.py ../data/wsj_0010_sample.txt ./wsj_0010_sample.txt.ne.nltk
+ex : python nltkNE.py ../data/wsj_0010_sample.txt ../data/wsj_0010_sample.txt.ne.nltk
 
 ----- nltkNE2univ.py -----
 
@@ -89,7 +89,23 @@ commande :
 source : le chemin vers le fichier POS tags nltk à convertir
 dict : le chemin vers un fichier de dictionnaire d'entitées nommées de nltk à univ
 output : le chemin du fichier dans lequel sera écrit le fichier d'entitées nommées universel
-ex : python nltkNE2univ.py ../data/wsj_0010_sample.txt.ne.nltk ../data/NERTags_PTB_Universal_Linux.txt ./wsj_0010_sample.txt.ne.univ
+ex : python nltkNE2univ.py ../data/wsj_0010_sample.txt.ne.nltk ../data/NERTags_PTB_Universal_Linux.txt ../data/wsj_0010_sample.txt.ne.univ
+
+----- NE2csv.py -----
+
+Programme pour convertir un fichier d'entités nommées au format :
+	Boca Raton	PERSON
+	Hot Springs	PERSON
+en un fichier csv au format :
+	Entité nommée	Type	Nombre d'occurrences	Proportion dans le texte (%)
+	Boba Raton		PERSON	1						. . .
+	Hot Springs 	PERSON	1						. . .
+	
+commande :
+	python NE2csv.py source output
+source : le chemin vers le fichier d'entités nommées à convertir
+output : le chemin du fichier dans lequel sera écrit le fichier csv
+ex : python NE2csv.py ../data/wsj_0010_sample.txt.ne.nltk ../data/wsj_0010_sample.txt.ne.xls
 
 ----- nltkPosTagging.py -----
 
@@ -103,3 +119,4 @@ commande :
 	nltkPosTagging.py source output
 source : le chemin vers le fichier texte à annoter
 output : le cheming du fichier dans lequel sera écrit la version annotée du texte
+ex : python nltkPosTagging.py ../data/wsj_0010_sample.txt ../data/wsj_0010_sample.txt.pos.nltk
